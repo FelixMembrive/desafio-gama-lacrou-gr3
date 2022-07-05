@@ -10,7 +10,9 @@ interface IButtonProps {
 export default function Login(props: IButtonProps) {
     return (
         <div className={"button" + props.className}>
-        <Link to={props.to} onClick={props.onPress}>{props.text}</Link>
+        <Link to={props.to} onClick={props.onPress}>
+            <span>{props.text}</span>
+        </Link>
         </div>
     )
 }
