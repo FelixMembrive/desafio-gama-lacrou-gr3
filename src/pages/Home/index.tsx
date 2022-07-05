@@ -1,4 +1,5 @@
 import Button from "../../components/Button";
+import Footer from "../../components/Footer";
 export default function Home() {
 
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <Button to="/profile" text="profile" />
       <Button to="/signup" text="signup" />
       <Button to="/register" text="register" />
+      <Footer/>
     </>
   );
 }
