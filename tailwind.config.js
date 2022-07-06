@@ -7,7 +7,8 @@ module.exports = {
         'nunito': 'Nunito',
       },
       backgroundImage: {
-        'upperImage': "url('/src/assets/images/top.svg')"
+        'upperImage': "url('/src/assets/images/top.svg')",
+        'footerImage': "url('/src/assets/images/fundo-footer.png')"
       },
       backgroundSize: {
         '100-auto': '100% auto'
