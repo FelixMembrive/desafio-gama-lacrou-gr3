@@ -1,34 +1,19 @@
-import ArrowUp from "../Icons/ArrowUp";
 import EmailIcon from "../Icons/EmailIcon";
-import FacebookIcon from "../Icons/FacebookIcon";
-import InstagramIcon from "../Icons/InstagramIcon";
-import LinkedinIcon from "../Icons/LinkedinIcon";
 
 
 
-export default function Footer(){
+
+export default function FooterMobile(){
   return(
-    <div>
-      <nav>
-        <ul>
-          <li><a href="">Início</a></li>
-          <li><a href="">Lacrei Saúde</a></li>
-          <li><a href="">Privacidade</a></li>
-        </ul>
-        <ul>
-          <li><a href=""> <FacebookIcon/> </a></li>
-          <li><a href=""> <InstagramIcon/> </a></li>
-          <li><a href=""> <LinkedinIcon/> </a></li>
-          <li><a href=""> <EmailIcon/> </a></li>
-        </ul>
-      </nav>
-      <div>
-        <p>
-          Copyright © 2021 Lacrei. 
-          CNPJ: 35.328.975/0001-28
-        </p>
-        <button className=" rounded-lg border-2 border-verde-lacrei w-12 h-12  flex justify-center items-center"><ArrowUp/></button>
-      </div>
+    <div className="bg-footer-image flex flex-col pt-[45px] pl-[15px] pb-[25px] bg-no-repeat bg-cover font-nunito sm:pl-6 sm:pt-14">
+     <strong className="text-xl sm:text-2xl">Lacrei</strong>
+     <div className="sm:text-base">
+      <p>A plataforma de inclusão social e jurídica LGBTQIA+</p>
+      <p className="flex items-center gap-1"> <EmailIcon /> contato@portallacrei.com.br</p>
+      <p>Copyright © 2019. Todos os direitos reservados. Lacrei.</p>
+      <p>CNPJ: 35.328.975/0001-28</p>
+      <a className="text-pink-400" href="#">Termos e Condições de Uso</a>
+     </div>
     </div>
   )
 }

@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'upperImage': "url('/src/assets/top.svg')"
+        'upperImage': "url('/src/assets/top.svg')",
+        'footer-image': "url('/src/assets/images/fundo-footer.png')"
       },
       colors: {
         success: "#0B854A",
@@ -56,6 +57,9 @@ module.exports = {
         },
         "verde-lacrei": "#018762",
       },
+      fontFamily: {
+        nunito: ['Nunito']
+      }
     },
   },
   plugins: [],
