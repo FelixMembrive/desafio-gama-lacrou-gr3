@@ -6,7 +6,7 @@ import {
 } from '@heroicons/react/outline'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import LogoDefault from '../Logo45x45'
-import RetractMenu from '../Icons/retractMenu'
+import RetractMenu from '../Icons/RetractMenu'
 
 const navItens = [
     {
