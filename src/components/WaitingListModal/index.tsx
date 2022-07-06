@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Button from "../Button";
 import Input from "../Input";
 import Modal from "../Modal";
+import Select from "../Select";
 
 export default function WaitingListModal() {
   return (
@@ -35,6 +36,15 @@ export default function WaitingListModal() {
           inputClassName="min-w-[291px] p-4"
           placeholder="Digite seu email"
           required={true}
+        />
+        <Select
+        className="mt-4"
+        labelClassName="font-bold"
+        labelText="Estado *"
+        inputId="select-states-waiting"
+        optionValues={[1, 2]}
+        optionTexts={["estado1","estado2"]}
+        selectClassName="min-w-[291px] p-4"
         />
         <Input
         className="mt-4"
