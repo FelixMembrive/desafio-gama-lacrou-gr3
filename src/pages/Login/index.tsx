@@ -1,4 +1,5 @@
 import Button from "../../components/Button";
+import Header from "../../components/Header";
 import Medica from "../../components/Images/Medica";
 
 //leva ao pré-cadastro (sign-up)
@@ -6,6 +7,7 @@ import Medica from "../../components/Images/Medica";
 export default function Login() {
   return (
     <div className="flex flex-col justify-center items-center bg-upperImage bg-no-repeat bg-cover bg-top">
+      <Header/>
       <Medica />
       <h1>Lacrei Saúde para profissinais voluntários</h1>
       <p className="text-center">
