@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Button from "../../components/Button";
 import Header from "../../components/Header";
 import Modal from "../../components/Modal";
+import WaitingListModal from "../../components/WaitingListModal";
 
 //leva ao pré-cadastro (sign-up)
 
@@ -23,7 +24,7 @@ export default function Login() {
       >
         <div className="mx-[3.87rem]">
         <Button to="/signup" text="São Paulo" className="bg-verde-lacrei text-white mt-6 mb-8 font-bold "/>
-        <Modal buttonText="outra localidade" buttonStyle="border border-0.5 border-verde-lacrei text-verde-lacrei mb-11 font-bold"/>
+        <WaitingListModal/>
         </div>
       </Modal>
       <div className="flex font-semibold text-sm">

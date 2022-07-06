@@ -4,8 +4,6 @@ import FacebookIcon from "../Icons/FacebookIcon";
 import InstagramIcon from "../Icons/InstagramIcon";
 import LinkedinIcon from "../Icons/LinkedinIcon";
 
-
-
 export default function Footer(){
   return(
     <div>
