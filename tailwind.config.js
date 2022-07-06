@@ -3,7 +3,7 @@ module.exports = {
   content: ["./src/**/*.tsx"],
   theme: {
     extend: {
-      fontFamily:{
+      fontFamily: {
         'nunito': 'Nunito',
       },
       backgroundImage: {
@@ -62,6 +62,9 @@ module.exports = {
         },
         "verde-lacrei": "#018762",
       },
+      fontFamily: {
+        nunito: ['Nunito']
+      }
     },
   },
   plugins: [],
