@@ -22,8 +22,8 @@ export default function Login() {
       buttonText="Quero ajudar!"
       title="Onde você atende?"
       >
-        <div className="mx-[3.87rem]">
-        <Button to="/signup" text="São Paulo" className="bg-verde-lacrei text-white mt-6 mb-8 font-bold "/>
+        <div className="mx-[3.87rem] flex flex-col items-center">
+        <Button to="/signup" text="São Paulo" className="bg-verde-lacrei text-white mt-6 mb-8 font-bold self-center w-[12.68rem]"/>
         <WaitingListModal/>
         </div>
       </Modal>

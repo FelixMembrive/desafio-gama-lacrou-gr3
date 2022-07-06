@@ -2,6 +2,7 @@ interface IInputProps {
   className?: string;
   labelText?: string;
   labelClassName?: string;
+  inputClassName?: string;
   labelId?: string;
   inputId: string;
   name?: string;
@@ -14,16 +15,17 @@ interface IInputProps {
 
 export default function Input(props: IInputProps) {
   return (
-    <div className={"input" + props.className}>
+    <div className={"" + props.className}>
       <label
         htmlFor={props.inputId}
         id={props.labelId}
-        className={props.labelClassName}
+        className={" " + props.labelClassName}
       >
         {props.labelText}
       </label>
       {props.required ? (
         <input
+          className={"border rounded-lg border-[#515151] h-12 px-4 py-3 mt-2 " + props.inputClassName}
           type={props.type}
           name={props.name}
           id={props.inputId}
@@ -34,6 +36,7 @@ export default function Input(props: IInputProps) {
         />
       ) : (
         <input
+        className={"border rounded-lg border-[#515151] h-12 p-4 mt-2 " + props.inputClassName}
           type={props.type}
           name={props.name}
           id={props.inputId}

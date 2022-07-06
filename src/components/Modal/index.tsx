@@ -13,16 +13,15 @@ export default function Modal(props: IModalProps) {
   const [showModal, setShowModal] = React.useState(false);
   return (
     <>
-      <button
+      <div
         className={
           "h-12 rounded-lg flex items-center justify-center px-8 shadow-2xl " +
           props.buttonStyle
         }
-        type="button"
         onClick={() => setShowModal(true)}
       >
         {props.buttonText}
-      </button>
+      </div>
       {showModal ? (
         <>
           <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
