@@ -8,6 +8,8 @@ import WaitingListModal from "../../components/WaitingListModal";
 
 export default function Login() {
   return (
+    <>
+    <Header></Header>
     <div className="flex flex-col justify-center items-center bg-upperImage bg-no-repeat bg-100-auto bg-top font-nunito">
       <img className="mt-20" src="/src/assets/images/medica.svg" alt="" />
       <h1 className="font-bold text-2xl text-center m-4">
@@ -34,5 +36,6 @@ export default function Login() {
         </a>
       </div>
     </div>
+    </>
   );
 }
