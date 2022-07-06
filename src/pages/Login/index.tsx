@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Button from "../../components/Button";
 import Header from "../../components/Header";
+import Modal from "../../components/Modal";
 
 //leva ao pré-cadastro (sign-up)
 
@@ -15,11 +16,16 @@ export default function Login() {
         Melhorar a qualidade e expectativa de vida e a experiência de pessoas LGBTQIAP+ é o principal objetivo do Lacrei. Por isso, buscamos profissionais preparados para atender com segurança e qualidade na nossa
         plataforma. Venha fazer parte!
       </p>
-      <Button
-        className="text-white bg-verde-lacrei mb-4"
-        to="/signup"
-        text="Quero ajudar!"
-      />
+      <Modal 
+      buttonStyle="bg-verde-lacrei text-white mb-4"
+      buttonText="Quero ajudar!"
+      title="Onde você atende?"
+      >
+        <div className="mx-[3.87rem]">
+        <Button to="/signup" text="São Paulo" className="bg-verde-lacrei text-white mt-6 mb-8 font-bold "/>
+        <Modal buttonText="outra localidade" buttonStyle="border border-0.5 border-verde-lacrei text-verde-lacrei mb-11 font-bold"/>
+        </div>
+      </Modal>
       <div className="flex font-semibold text-sm">
         <span className="mr-2">já tem cadastro?</span>
         <a href="https://app.portallacrei.com.br/auth/"> 
