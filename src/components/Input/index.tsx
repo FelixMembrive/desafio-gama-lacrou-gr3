@@ -19,7 +19,7 @@ export default function Input(props: IInputProps) {
       <label
         htmlFor={props.inputId}
         id={props.labelId}
-        className={" " + props.labelClassName}
+        className={"block " + props.labelClassName}
       >
         {props.labelText}
       </label>
