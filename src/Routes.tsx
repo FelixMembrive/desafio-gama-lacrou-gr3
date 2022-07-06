@@ -11,9 +11,9 @@ export default function RoutesComponent() {
       <Routes>
         <Route path="" element={<Home />} />
         <Route path="login" element={<Login />} />
-        <Route path="profile" element={<Profile />} />
         <Route path="signup" element={<SignUp />} />
         <Route path="register" element={<Register />} />
+        <Route path="profile" element={<Profile />} />
       </Routes>
   );
 }

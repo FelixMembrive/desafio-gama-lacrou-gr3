@@ -3,9 +3,14 @@ module.exports = {
   content: ["./src/**/*.tsx"],
   theme: {
     extend: {
+      fontFamily: {
+        'nunito': 'Nunito',
+      },
       backgroundImage: {
-        'upperImage': "url('/src/assets/top.svg')",
-        'footer-image': "url('/src/assets/images/fundo-footer.png')"
+        'upperImage': "url('/src/assets/images/top.svg')"
+      },
+      backgroundSize: {
+        '100-auto': '100% auto'
       },
       colors: {
         success: "#0B854A",
