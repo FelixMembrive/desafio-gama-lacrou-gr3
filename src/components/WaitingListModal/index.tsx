@@ -48,7 +48,7 @@ export default function WaitingListModal() {
         />
         <Button to="/signup" text="Enviar informações" className="bg-verde-lacrei text-white mb-4 font-bold self-center w-[14rem] mt-12"/>
       </form>
-      <Link to="login" className="self-center mb-8">Cancelar</Link>
+      <a href="/login" className="self-center mb-8">Cancelar</a>
     </Modal>
   );
 }
