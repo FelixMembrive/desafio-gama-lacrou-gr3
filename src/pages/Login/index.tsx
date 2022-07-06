@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Button from "../../components/Button";
+import FooterMobile from "../../components/Footer";
 import Header from "../../components/Header";
 import Modal from "../../components/Modal";
 import WaitingListModal from "../../components/WaitingListModal";
@@ -9,8 +10,8 @@ import WaitingListModal from "../../components/WaitingListModal";
 export default function Login() {
   return (
     <>
-    <Header></Header>
     <div className="flex flex-col justify-center items-center bg-upperImage bg-no-repeat bg-100-auto bg-top font-nunito">
+      <Header/>
       <img className="mt-20" src="/src/assets/images/medica.svg" alt="" />
       <h1 className="font-bold text-2xl text-center m-4">
         Lacrei Saúde para profissinais voluntários
@@ -29,13 +30,14 @@ export default function Login() {
         <WaitingListModal/>
         </div>
       </Modal>
-      <div className="flex font-semibold text-sm">
+      <div className="flex font-semibold text-sm mb-28">
         <span className="mr-2">já tem cadastro?</span>
         <a href="https://app.portallacrei.com.br/auth/"> 
         <strong className="text-rosa-lacrei-400">acessar minha conta</strong> 
         </a>
       </div>
     </div>
+    <FooterMobile/>
     </>
   );
 }
