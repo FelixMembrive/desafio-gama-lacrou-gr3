@@ -15,7 +15,7 @@ export default function Modal(props: IModalProps) {
     <>
       <button
         className={
-          "h-12 rounded-lg flex items-center justify-center px-8 shadow " +
+          "h-12 rounded-lg flex items-center justify-center px-8 shadow-2xl " +
           props.buttonStyle
         }
         type="button"

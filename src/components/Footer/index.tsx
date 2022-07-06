@@ -1,8 +1,6 @@
 import EmailIcon from "../Icons/EmailIcon";
 
 
-
-
 export default function FooterMobile(){
   return(
     <div className="bg-footerImage flex flex-col pt-[45px] pl-[15px] pb-[25px] bg-no-repeat bg-cover font-nunito sm:pl-6 sm:pt-14 md:hidden">
