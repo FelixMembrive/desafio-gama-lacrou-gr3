@@ -1,8 +1,8 @@
 import ArrowUp from "../Icons/ArrowUp";
-import EmailIcon from "../Icons/emailIcon";
+import EmailIcon from "../Icons/EmailIcon";
 import FacebookIcon from "../Icons/FacebookIcon";
-import InstagramIcon from "../Icons/instagramIcon";
-import LinkedinIcon from "../Icons/linkedinIcon";
+import InstagramIcon from "../Icons/InstagramIcon";
+import LinkedinIcon from "../Icons/LinkedinIcon";
 
 
 

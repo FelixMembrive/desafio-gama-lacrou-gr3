@@ -9,7 +9,7 @@ interface IButtonProps {
 
 export default function Login(props: IButtonProps) {
     return (
-        <div className={"button" + props.className}>
+        <div className={"h-12 rounded-lg flex items-center justify-center px-8 " + props.className}>
         <Link to={props.to} onClick={props.onPress}>
             <span>{props.text}</span>
         </Link>
