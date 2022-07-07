@@ -11,6 +11,7 @@ interface IInputProps {
   value?: string;
   required?: boolean;
   form?: string;
+  disabled?:boolean;
 }
 
 export default function Input(props: IInputProps) {
@@ -23,18 +24,6 @@ export default function Input(props: IInputProps) {
       >
         {props.labelText}
       </label>
-      {props.required ? (
-        <input
-          className={"border rounded-lg border-[#515151] h-12 px-4 py-3 mt-2 " + props.inputClassName}
-          type={props.type}
-          name={props.name}
-          id={props.inputId}
-          placeholder={props.placeholder}
-          value={props.value}
-          form={props.form}
-          required
-        />
-      ) : (
         <input
         className={"border rounded-lg border-[#515151] h-12 p-4 mt-2 " + props.inputClassName}
           type={props.type}
@@ -43,8 +32,9 @@ export default function Input(props: IInputProps) {
           placeholder={props.placeholder}
           value={props.value}
           form={props.form}
+          disabled={props.disabled}
+          required={props.required}
         />
-      )}
     </div>
   );
 }
