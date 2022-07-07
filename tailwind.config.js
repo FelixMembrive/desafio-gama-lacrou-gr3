@@ -63,11 +63,7 @@ module.exports = {
                 },
                 "verde-lacrei": "#018762",
                 "verde-lacrei2": "#91D9B7",
-
             },
-            fontFamily: {
-                nunito: ['Nunito']
-            }
         },
     },
     plugins: [],
