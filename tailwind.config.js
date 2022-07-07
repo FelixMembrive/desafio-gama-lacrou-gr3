@@ -63,12 +63,19 @@ module.exports = {
                 },
                 "verde-lacrei": "#018762",
                 "verde-lacrei2": "#91D9B7",
-
             },
-            fontFamily: {
-                nunito: ['Nunito']
-            }
         },
+        screens: {
+            'mobile-md': '360px',
+            'mobile-lg': '425px',
+            'sm': '640px',
+            'md': '768px',
+            'lg': '1024px',
+            'xl': '1280px',
+            '2xl': '1536px',
+          },
     },
-    plugins: [],
+    plugins: [
+        require('@tailwindcss/forms')
+    ],
 };
