@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Checkbox from "../../components/Checkbox";
 import FooterMobile from "../../components/Footer";
 import Header from "../../components/Header";
 import ProfilePhoto from "../../components/ProfilePhoto";
