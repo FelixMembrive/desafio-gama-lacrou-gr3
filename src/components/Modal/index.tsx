@@ -38,7 +38,7 @@ export default function Modal(props: IModalProps) {
                         <CloseCircle color={"#00000"} />
                       </span>
                     </button>
-                  <h3 className="text-2xl font-semibold self-center text-center ">{props.title}</h3>
+                  <h3 className="text-2xl font-semibold self-center text-center mt-6 ">{props.title}</h3>
                 </div>
                 {/*body*/}
                   {props.children}
