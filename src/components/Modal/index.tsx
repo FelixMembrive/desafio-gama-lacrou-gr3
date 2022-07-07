@@ -7,6 +7,7 @@ interface IModalProps {
   title?: string;
   titleStyle?: string;
   children?: React.ReactNode;
+  onShow?: any;
 }
 
 export default function Modal(props: IModalProps) {
@@ -18,7 +19,10 @@ export default function Modal(props: IModalProps) {
           "h-12 rounded-lg flex items-center justify-center px-8 drop-shadow-[0px_1px_6px_rgba(0,0,0,0.4)] " +
           props.buttonStyle
         }
-        onClick={() => setShowModal(true)}
+        onClick={() => {
+          setShowModal(true)
+          props.onShow
+        }}
       >
         {props.buttonText}
       </div>
