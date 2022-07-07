@@ -15,7 +15,7 @@ export default function Modal(props: IModalProps) {
     <>
       <div
         className={
-          "h-12 rounded-lg flex items-center justify-center px-8 shadow-2xl " +
+          "h-12 rounded-lg flex items-center justify-center px-8 drop-shadow-[0px_1px_6px_rgba(0,0,0,0.4)] " +
           props.buttonStyle
         }
         onClick={() => setShowModal(true)}
@@ -38,7 +38,7 @@ export default function Modal(props: IModalProps) {
                         <CloseCircle color={"#00000"} />
                       </span>
                     </button>
-                  <h3 className="text-2xl font-semibold self-center">{props.title}</h3>
+                  <h3 className="text-2xl font-semibold self-center text-center ">{props.title}</h3>
                 </div>
                 {/*body*/}
                   {props.children}
