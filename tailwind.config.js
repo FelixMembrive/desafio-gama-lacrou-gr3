@@ -8,7 +8,8 @@ module.exports = {
             },
             backgroundImage: {
                 'upperImage': "url('/src/assets/images/top.svg')",
-                'footerImage': "url('/src/assets/images/fundo-footer.png')"
+                'footerImage': "url('/src/assets/images/fundo-footer.png')",
+                'upperImageEmail': "url('/src/assets/images/upperImageEmail.png')",
             },
             backgroundSize: {
                 '100-auto': '100% auto'
@@ -73,7 +74,7 @@ module.exports = {
             'lg': '1024px',
             'xl': '1280px',
             '2xl': '1536px',
-          },
+        },
     },
     plugins: [
         require('@tailwindcss/forms')
