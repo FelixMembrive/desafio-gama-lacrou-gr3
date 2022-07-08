@@ -6,6 +6,7 @@ import Header from "../../components/Header";
 import Input from "../../components/Input";
 import Modal from "../../components/Modal";
 import Select from "../../components/Select";
+import { preCadastroProfissional } from "../../services/MainApi/profissionais";
 
 //mostra alerta/modal/página que diz que em 24h você receberá um link levando ao cadastro
 
@@ -17,16 +18,47 @@ export default function SignUp() {
   const [numero_conselho, setNumero_conselho]= useState<string>("");
   const [senha1, setSenha1] = useState<string>("");
   const [senha2, setSenha2]= useState<string>("");
-  const [senhaConfirmada, setSenhaConfirmada]= useState<string>("");
+  const [senha, setSenha]= useState<string>("");
   const [regiao_atuacao, setRegiao_atuacao]= useState<string>("");
-  const [profissao_id, setProfissao_id]= useState<string>("");
-  const [prefixo, setPrefixo]= useState<string>("");
+  const [profissao_id, setProfissao_id]= useState<number>(0);
+  const [prefixo, setPrefixo]= useState<number>(0);
+  const regisao_atuacao = "SP"
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
-    //verificar se senha 1 é igual a senha 2. Se for adicionar ao estado senha confirmada (senão, mostrar erro)
-    //verificar se valor do profissão_id é igual ao prefixo, se não for, mostrar erro
-    setOpenModal(true);
+   
+    if(senha1 == senha2){
+      setSenha(senha2);
+    } else{
+      return alert("O campo de confirmação da senha está diferente da senha escolhida!")
+    }
+
+    if(profissao_id == prefixo){
+
+    } else{
+      return alert("O prefixo selecionado não corresponde à profissão escolhida")
+    }
+
+    const payload = {
+      nome,
+      email,
+      numero_conselho,
+      senha,
+      regiao_atuacao,
+      profissao_id
+    }
+
+    try {
+      const response = await preCadastroProfissional(payload);
+
+      if(response.status !== 201){
+        return alert("Algo deu errado")
+      }     
+      setOpenModal(true); 
+    }catch (error){
+      alert("Algo deu errado")
+    }
+    
   };
 
   return (
