@@ -8,13 +8,17 @@ interface IModalProps {
   titleStyle?: string;
   children?: React.ReactNode;
   onShow?: any;
+  type?: "button" | "submit" | "reset" | undefined;
+  form?: string;
 }
 
 export default function Modal(props: IModalProps) {
   const [showModal, setShowModal] = React.useState(false);
   return (
     <>
-      <div
+      <button
+        type={props.type? props.type : "button"}
+        form={props.form}
         className={
           "h-12 rounded-lg flex items-center justify-center px-8 drop-shadow-[0px_1px_6px_rgba(0,0,0,0.4)] " +
           props.buttonStyle
@@ -25,7 +29,7 @@ export default function Modal(props: IModalProps) {
         }}
       >
         {props.buttonText}
-      </div>
+      </button>
       {showModal ? (
         <>
           <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">

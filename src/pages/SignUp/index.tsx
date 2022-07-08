@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button";
 import FooterMobile from "../../components/Footer";
@@ -27,7 +28,7 @@ export default function SignUp() {
           Nessa etapa, precisamos que você preencha todas essas informações para
           validarmos o seu cadastro e vínculo profissional.
         </p>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={()=>alert("HI")} id="form-signup">
           <Input
             className="mt-4"
             labelText="Nome social completo *"
@@ -142,6 +143,8 @@ export default function SignUp() {
           </div>
         </form>
         <Modal
+          type="submit"
+          form="form-signup"
           buttonStyle="bg-verde-lacrei text-white mb-4 w-52"
           buttonText="Enviar pré-cadastro"
           title="Pré-cadastro recebido com sucesso!"
