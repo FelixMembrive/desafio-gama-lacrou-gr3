@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { CloseCircle } from "react-ionicons";
 
 interface IModalProps {
@@ -10,10 +10,15 @@ interface IModalProps {
   onShow?: any;
   type?: "button" | "submit" | "reset" | undefined;
   form?: string;
+  openModal?:boolean;
 }
 
 export default function Modal(props: IModalProps) {
   const [showModal, setShowModal] = React.useState(false);
+  const [externalOpen, setExternalOpen] = React.useState(props.openModal)
+
+  useEffect(()=>{setExternalOpen(props.openModal)},[props.openModal])
+
   return (
     <>
       <button
@@ -24,13 +29,13 @@ export default function Modal(props: IModalProps) {
           props.buttonStyle
         }
         onClick={() => {
-          setShowModal(true)
+          props.type === "submit" ? null : setShowModal(true)
           props.onShow
         }}
       >
         {props.buttonText}
       </button>
-      {showModal ? (
+      {showModal || externalOpen ? (
         <>
           <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
             <div className="relative w-full my-6 mx-4 max-w-3xl">

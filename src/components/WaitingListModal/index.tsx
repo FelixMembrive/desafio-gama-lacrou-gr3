@@ -1,15 +1,23 @@
+import { useState } from "react";
 import Button from "../Button";
 import Input from "../Input";
 import Modal from "../Modal";
 import Select from "../Select";
 
 export default function WaitingListModal() {
+  const[openModal, setOpenModal]= useState(false)
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    setOpenModal(true);
+  };
+
   return (
     <Modal
       buttonText="outra localidade"
       buttonStyle="drop-shadow-[0px_1px_6px_rgba(0,0,0,0.4)] border border-0.5 border-verde-lacrei text-verde-lacrei mb-11 font-bold w-[12.68rem] font-nunito "
     >
-      <form className="flex flex-1 flex-col items-center">
+      <form className="flex flex-1 flex-col items-center" onSubmit={handleSubmit} id="waitinglist-form">
         <p className="text-center mx-7 mt-4 font-semibold text-sm max-w-md">
           Nesse momento, a Lacrei Saúde atua apenas no Estado de São Paulo.
           Preencha aqui suas informações para a lista de espera e, assim que a
@@ -60,6 +68,9 @@ export default function WaitingListModal() {
         buttonStyle="bg-verde-lacrei drop-shadow-[0px_1px_6px_rgba(0,0,0,0.4)] w-[223px] mt-12 mb-4 text-white font-[18px]"
         title="Agradecemos seu interesse!"
         titleStyle="self-center mb-4"
+        form="waitinglist-form"
+        openModal={openModal}
+        type="submit"
         >
           <p className="text-center self-center mb-6">Acreditamos que em breve poderemos crescer juntos para melhorar a assistência à nossa incrível comunidade LGBTQIAP+!</p>
 

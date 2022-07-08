@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button";
 import FooterMobile from "../../components/Footer";
@@ -11,10 +11,11 @@ import Select from "../../components/Select";
 
 export default function SignUp() {
   const navigate = useNavigate();
+  const[openModal, setOpenModal]= useState(false)
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    navigate("/login");
+    setOpenModal(true);
   };
 
   return (
@@ -28,7 +29,7 @@ export default function SignUp() {
           Nessa etapa, precisamos que você preencha todas essas informações para
           validarmos o seu cadastro e vínculo profissional.
         </p>
-        <form onSubmit={()=>alert("HI")} id="form-signup">
+        <form onSubmit={handleSubmit} id="form-signup">
           <Input
             className="mt-4"
             labelText="Nome social completo *"
@@ -149,6 +150,7 @@ export default function SignUp() {
           buttonText="Enviar pré-cadastro"
           title="Pré-cadastro recebido com sucesso!"
           titleStyle=" mt-4"
+          openModal={openModal}
         >
           <div className="mx-[3.87rem] flex flex-col items-center">
             <p className="mt-6 mb-6 min-w-[300px]">
