@@ -7,8 +7,6 @@ on:
 
 jobs:
   deploy:
-    provider: pages
-    skip_cleanup: true
     local_dir: dist
     keep_history: true
     runs-on: ubuntu-18.04
