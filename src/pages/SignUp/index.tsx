@@ -11,10 +11,21 @@ import Select from "../../components/Select";
 
 export default function SignUp() {
   const navigate = useNavigate();
-  const[openModal, setOpenModal]= useState(false)
+  const [openModal, setOpenModal]= useState<boolean>(false);
+  const [nome, setNome]= useState<string>("");
+  const [email, setEmail]= useState<string>("");
+  const [numero_conselho, setNumero_conselho]= useState<string>("");
+  const [senha1, setSenha1] = useState<string>("");
+  const [senha2, setSenha2]= useState<string>("");
+  const [senhaConfirmada, setSenhaConfirmada]= useState<string>("");
+  const [regiao_atuacao, setRegiao_atuacao]= useState<string>("");
+  const [profissao_id, setProfissao_id]= useState<string>("");
+  const [prefixo, setPrefixo]= useState<string>("");
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
+    //verificar se senha 1 é igual a senha 2. Se for adicionar ao estado senha confirmada (senão, mostrar erro)
+    //verificar se valor do profissão_id é igual ao prefixo, se não for, mostrar erro
     setOpenModal(true);
   };
 
@@ -39,21 +50,14 @@ export default function SignUp() {
             inputClassName="min-w-[291px] mobile-md:min-w-[328px] p-4"
             placeholder="Digite seu nome"
             required={true}
+            onChange={(e:any)=>setNome(e.target.value)}
           />
           <Select
             className="mt-4"
             labelClassName="font-bold"
             labelText="Profissão *"
             inputId="select-profession-signup"
-            optionValues={[
-              "Enfermagem",
-              "Fisioterapia",
-              "Fonoaudiologia",
-              "Medicina",
-              "Nutrição",
-              "Odontologia",
-              "Psicologia",
-            ]}
+            optionValues={[1,2,3,4,5,6,7]}
             optionTexts={[
               "Enfermagem",
               "Fisioterapia",
@@ -63,22 +67,16 @@ export default function SignUp() {
               "Odontologia",
               "Psicologia",
             ]}
+            placeholder="Escolha uma profissão"
             selectClassName="min-w-[291px] mobile-md:min-w-[328px] p-4"
+            onChange={(e:any)=>setProfissao_id(e.target.value)}
           />
           <Select
             className="mt-4"
             labelClassName="font-bold"
             labelText="Prefixo do Conselho Profissional *"
             inputId="select-council-signup"
-            optionValues={[
-              "COREN",
-              "CREFITO",
-              "CRFa",
-              "CRM",
-              "CRN",
-              "CRO",
-              "CRP",
-            ]}
+            optionValues={[1,2,3,4,5,6,7]}
             optionTexts={[
               "COREN | Enfermagem",
               "CREFITO | Fisioterapia",
@@ -89,6 +87,8 @@ export default function SignUp() {
               "CRP | Psicologia",
             ]}
             selectClassName="min-w-[291px] mobile-md:min-w-[328px] p-4"
+            placeholder="Selecione uma profissão"
+            onChange={(e:any)=>setPrefixo(e.target.value)}
           />
           <Input
             className="mt-4"
@@ -99,6 +99,7 @@ export default function SignUp() {
             inputClassName="min-w-[291px] mobile-md:min-w-[328px] p-4"
             placeholder="Digite o número"
             required={true}
+            onChange={(e:any)=>setNumero_conselho(e.target.value)}
           />
           <hr className="bg-[#CFCFCF] min-w-[328px] mx-2 h-0.5 mt-6" />
           <Input
@@ -110,6 +111,7 @@ export default function SignUp() {
             inputClassName="min-w-[291px] mobile-md:min-w-[328px] p-4"
             placeholder="Digite seu email"
             required={true}
+            onChange={(e:any)=>setEmail(e.target.value)}
           />
           <Input
             className="mt-4"
@@ -120,6 +122,7 @@ export default function SignUp() {
             inputClassName="min-w-[291px] mobile-md:min-w-[328px] p-4"
             placeholder="Digite sua senha"
             required={true}
+            onChange={(e:any)=>setSenha1(e.target.value)}
           />
           <Input
             className="mt-4"
@@ -130,6 +133,7 @@ export default function SignUp() {
             inputClassName="min-w-[291px] mobile-md:min-w-[328px] p-4"
             placeholder="Digite sua senha novamente"
             required={true}
+            onChange={(e:any)=>setSenha2(e.target.value)}
           />
           <div className="mt-6 mb-12 flex max-w-[291px]">
             <input

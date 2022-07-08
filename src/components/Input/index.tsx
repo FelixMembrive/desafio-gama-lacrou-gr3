@@ -12,6 +12,7 @@ interface IInputProps {
   required?: boolean;
   form?: string;
   disabled?:boolean;
+  onChange?: any;
 }
 
 export default function Input(props: IInputProps) {
@@ -34,6 +35,7 @@ export default function Input(props: IInputProps) {
           form={props.form}
           disabled={props.disabled}
           required={props.required}
+          onChange={props.onChange}
         />
     </div>
   );
