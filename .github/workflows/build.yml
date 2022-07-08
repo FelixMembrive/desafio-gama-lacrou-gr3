@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
-          node-version: '16.14'
+          node-version: '14.x'
       - name: Build web-app
         run: |
           npm ci
@@ -22,19 +22,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
-
-# language: node_js
-# node_js:
-#   - lts/*
-# install:
-#   - npm ci
-# script:
-#   - npm run build
-# deploy:
-#   provider: pages
-#   skip_cleanup: true
-#   local_dir: dist
-#   # A token generated on GitHub allowing Travis to push code on you repository.
-#   # Set in the Travis settings page of your repository, as a secure variable.
-#   github_token: $GITHUB_TOKEN
-#   keep_history: true
