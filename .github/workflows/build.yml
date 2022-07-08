@@ -7,8 +7,6 @@ on:
 
 jobs:
   deploy:
-    local_dir: dist
-    keep_history: true
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
