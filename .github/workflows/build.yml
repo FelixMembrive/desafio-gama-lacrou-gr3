@@ -5,26 +5,36 @@ on:
     branches:
       - main
 
-jobs:
-  # deploy:
-  #   runs-on: ubuntu-18.04
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - uses: actions/setup-node@v1
-  #       with:
-  #         node-version: '16.14'
-  #     - name: Build web-app
-  #       run: |
-  #         npm ci
-  #         npm run build
-  #     - name: Deploy to gh-pages
-  #       uses: peaceiris/actions-gh-pages@v3
-  #       with:
-  #         github_token: ${{ secrets.GITHUB_TOKEN }}
-  #         publish_dir: ./build
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-18.04
+#     steps:
+#       - uses: actions/checkout@v2
+#       - uses: actions/setup-node@v1
+#         with:
+#           node-version: '16.14'
+#       - name: Build web-app
+#         run: |
+#           npm ci
+#           npm run build
+#       - name: Deploy to gh-pages
+#         uses: peaceiris/actions-gh-pages@v3
+#         with:
+#           github_token: ${{ secrets.GITHUB_TOKEN }}
+#           publish_dir: ./build
 
-  deploy:
+language: node_js
+node_js:
+  - lts/*
+install:
+  - npm ci
+script:
+  - npm run build
+deploy:
   provider: pages
   skip_cleanup: true
-  github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  local_dir: dist
+  # A token generated on GitHub allowing Travis to push code on you repository.
+  # Set in the Travis settings page of your repository, as a secure variable.
+  github_token: $GITHUB_TOKEN
   keep_history: true
