@@ -2,7 +2,7 @@
     "name": "desafio-gama-lacrou-gr3",
     "private": true,
     "version": "0.0.0",
-    "homepage": "github-page/",
+    "homepage": "desafio-gama-lacrou-gr3/",
     "scripts": {
         "dev": "vite",
         "build": "tsc && vite build",
