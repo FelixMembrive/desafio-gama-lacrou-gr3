@@ -16,10 +16,9 @@ export default function SignUp() {
   const [nome, setNome]= useState<string>("");
   const [email, setEmail]= useState<string>("");
   const [numero_conselho, setNumero_conselho]= useState<string>("");
-  const [senha1, setSenha1] = useState<string>("");
+  const [senha, setSenha] = useState<string>("");
   const [senha2, setSenha2]= useState<string>("");
-  const [senha, setSenha]= useState<string>("");
-  const [regiao_atuacao, setRegiao_atuacao]= useState<string>("");
+  const [regiao_atuacao, setRegiao_atuacao]= useState<string>("SP");
   const [profissao_id, setProfissao_id]= useState<number>(0);
   const [prefixo, setPrefixo]= useState<number>(0);
   const regisao_atuacao = "SP"
@@ -27,8 +26,8 @@ export default function SignUp() {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
    
-    if(senha1 == senha2){
-      setSenha(senha2);
+    if(senha == senha2){
+      setSenha(senha);
     } else{
       return alert("O campo de confirmação da senha está diferente da senha escolhida!")
     }
@@ -154,7 +153,7 @@ export default function SignUp() {
             inputClassName="min-w-[291px] mobile-md:min-w-[328px] p-4"
             placeholder="Digite sua senha"
             required={true}
-            onChange={(e:any)=>setSenha1(e.target.value)}
+            onChange={(e:any)=>setSenha(e.target.value)}
           />
           <Input
             className="mt-4"
@@ -175,7 +174,7 @@ export default function SignUp() {
               className="bg-white outline-none checked:bg-verde-lacrei checked:text-verde-lacrei rounded-sm border-[1px] border-verde-lacrei w-6 h-6"
             />
             <label htmlFor="checkbox-signup" className="ml-3">
-              Li e aceito os termos e condições apresentados
+              Li e aceito os <a href="" className="underline">termos e condições</a> apresentados.
             </label>
           </div>
         </form>
