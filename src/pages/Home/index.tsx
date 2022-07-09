@@ -5,15 +5,15 @@ export default function Home() {
 
   return (
     <>
+    <div className="flex flex-col justify-center items-center bg-upperImage bg-no-repeat bg-100-auto bg-top font-nunito">
     <Header></Header>
-      <h1>Esta é a página Home com os links roteados</h1>
-      <Button to="/" text="home" />
-      <Button to="/login" text="login" />
-      <Button to="/signup" text="signup" />
-      <Button to="/register" text="register" />
-      <Button to="/profile" text="profile" />
-      
+      <Button to="/login" text="Home" />
+      <Button to="/signup" text="Pré-cadastro" />
+      <Button to="/profile" text="Perfil / Pós cadastro" />
+      <Button to="/emailPageActive" text="Email - Page Active" />
+      <Button to="/emailPageInactive" text="Email - Page Inctive" />
       <Footer/>
+      </div>
     </>
   );
 }

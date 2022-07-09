@@ -18,7 +18,6 @@ export default function RoutesComponent() {
         <Route path="profile" element={<Profile />} />
         <Route path="emailPageActive" element={<EmailPageActive/>} />
         <Route path="emailPageInactive" element={<EmailPageInactive/>} />
-        
       </Routes>
   );
 }
