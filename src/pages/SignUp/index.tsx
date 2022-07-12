@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "../../components/Button";
 import FooterMobile from "../../components/Footer";
 import Header from "../../components/Header";
@@ -174,7 +174,7 @@ export default function SignUp() {
               className="bg-white outline-none checked:bg-verde-lacrei checked:text-verde-lacrei rounded-sm border-[1px] border-verde-lacrei w-6 h-6"
             />
             <label htmlFor="checkbox-signup" className="ml-3">
-              Li e aceito os <a href="" className="underline">termos e condições</a> apresentados.
+              Li e aceito os <Link to="../" className="underline">termos e condições</Link> apresentados.
             </label>
           </div>
         </form>
@@ -199,9 +199,9 @@ export default function SignUp() {
             />
           </div>
         </Modal>
-        <a href="/login" className="self-center mb-11 text-[#ff1192]">
+        <Link to="/login" className="self-center mb-11 text-[#ff1192]">
           Cancelar
-        </a>
+        </Link>
       </div>
       <FooterMobile />
     </>

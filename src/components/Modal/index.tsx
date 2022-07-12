@@ -10,39 +10,40 @@ interface IModalProps {
   onShow?: any;
   type?: "button" | "submit" | "reset" | undefined;
   form?: string;
-  openModal?:boolean;
+  openModal?: boolean;
+  showCancel?: boolean
 }
 
 export default function Modal(props: IModalProps) {
   const [showModal, setShowModal] = React.useState(false);
   const [externalOpen, setExternalOpen] = React.useState(props.openModal)
 
-  useEffect(()=>{setExternalOpen(props.openModal)},[props.openModal])
+  useEffect(() => { setExternalOpen(props.openModal) }, [props.openModal])
 
   return (
     <>
-      <button
-        type={props.type? props.type : "button"}
-        form={props.form}
-        className={
-          "h-12 rounded-lg flex items-center justify-center px-8 drop-shadow-[0px_1px_6px_rgba(0,0,0,0.4)] " +
-          props.buttonStyle
-        }
-        onClick={() => {
-          props.type === "submit" ? null : setShowModal(true)
-          props.onShow
-        }}
-      >
-        {props.buttonText}
-      </button>
-      {showModal || externalOpen ? (
-        <>
-          <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-            <div className="relative w-full my-6 mx-4 max-w-3xl">
-              {/*content*/}
-              <div className="p-2 border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-                {/*header*/}
-                <div className="flex flex-col">
+        <button
+          type={props.type ? props.type : "button"}
+          form={props.form}
+          className={
+            "h-12 rounded-lg flex items-center justify-center px-8 drop-shadow-[0px_1px_6px_rgba(0,0,0,0.4)] " +
+            props.buttonStyle
+          }
+          onClick={() => {
+            props.type === "submit" ? null : setShowModal(true)
+            props.onShow
+          }}
+        >
+          {props.buttonText}
+        </button>
+        {showModal || externalOpen ? (
+          <>
+            <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+              <div className="relative w-full my-6 mx-4 max-w-3xl">
+                {/*content*/}
+                <div className="p-2 border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                  {/*header*/}
+                  <div className="flex flex-col">
                     <button
                       className="ml-auto bg-transparent border-0 text-black float-right text-xl leading-none font-semibold outline-none focus:outline-none"
                       onClick={() => setShowModal(false)}
@@ -51,16 +52,19 @@ export default function Modal(props: IModalProps) {
                         <CloseCircle color={"#00000"} />
                       </span>
                     </button>
-                  <h3 className="text-2xl font-semibold self-center text-center mt-6 ">{props.title}</h3>
+                    <h3 className="text-2xl font-semibold self-center text-center mt-6 ">{props.title}</h3>
+                  </div>
+                  {/*body*/}
+                  <>
+                    {props.children}
+                    {props.showCancel && <button onClick={() => setShowModal(false)} className="self-center mb-8 text-[#ff1192]">Cancelar</button>}
+                  </>
                 </div>
-                {/*body*/}
-                  {props.children}
               </div>
             </div>
-          </div>
-          <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
-        </>
-      ) : null}
+            <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+          </>
+        ) : null}
     </>
   );
 }

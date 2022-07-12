@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import Button from "../../components/Button";
 import FooterMobile from "../../components/Footer";
 import Header from "../../components/Header";
@@ -10,34 +9,45 @@ import WaitingListModal from "../../components/WaitingListModal";
 export default function Login() {
   return (
     <>
-    <div className="flex flex-col justify-center items-center bg-upperImage bg-no-repeat bg-100-auto bg-top font-nunito">
-      <Header/>
-      <img className="mt-20" src="/src/assets/images/medica.svg" alt="" />
-      <h1 className="font-bold text-2xl text-center m-4">
-        Lacrei Saúde para profissinais voluntários
-      </h1>
-      <p className="text-center mx-4 mb-8">
-        Melhorar a qualidade e expectativa de vida e a experiência de pessoas LGBTQIAP+ é o principal objetivo do Lacrei. Por isso, buscamos profissionais preparados para atender com segurança e qualidade na nossa
-        plataforma. Venha fazer parte!
-      </p>
-      <Modal 
-      buttonStyle="bg-verde-lacrei text-white mb-4"
-      buttonText="Quero ajudar!"
-      title="Onde você atende?"
-      >
-        <div className="mx-[3.87rem] flex flex-col items-center">
-        <Button to="/signup" text="São Paulo" className="bg-verde-lacrei text-white mt-6 mb-8 font-bold self-center w-[12.68rem]"/>
-        <WaitingListModal/>
+      <div className="flex flex-col justify-center items-center bg-upperImage bg-no-repeat bg-100-auto bg-top font-nunito">
+        <Header />
+        <img className="mt-20" src="/src/assets/images/medica.svg" alt="" />
+        <h1 className="font-bold text-2xl text-center m-4">
+          Lacrei Saúde para profissinais voluntários
+        </h1>
+        <p className="text-center mx-4 mb-8">
+          Melhorar a qualidade e expectativa de vida e a experiência de pessoas LGBTQIAP+ é o principal objetivo do Lacrei. Por isso, buscamos profissionais preparados para atender com segurança e qualidade na nossa
+          plataforma. Venha fazer parte!
+        </p>
+        {/* <Transition
+          as={Fragment}
+          enter="transition ease-out duration-200"
+          enterFrom="opacity-0 translate-y-1"
+          enterTo="opacity-100 translate-y-0"
+          leave="transition ease-in duration-150"
+          leaveFrom="opacity-100 translate-y-0"
+          leaveTo="opacity-0 translate-y-1"
+        > */}<>
+          <Modal
+            buttonStyle="bg-verde-lacrei text-white mb-4"
+            buttonText="Quero ajudar!"
+            title="Onde você atende?"
+          >
+            <div className="mx-[3.87rem] flex flex-col items-center">
+              <Button to="/signup" text="São Paulo" className="bg-verde-lacrei text-white mt-6 mb-8 font-bold self-center w-[12.68rem]" />
+              <WaitingListModal />
+            </div>
+          </Modal>
+          </>
+        {/* </Transition> */}
+        <div className="flex font-semibold text-sm mb-28">
+          <span className="mr-2">já tem cadastro?</span>
+          <a href="https://app.portallacrei.com.br/auth/">
+            <strong className="text-rosa-lacrei-400">acessar minha conta</strong>
+          </a>
         </div>
-      </Modal>
-      <div className="flex font-semibold text-sm mb-28">
-        <span className="mr-2">já tem cadastro?</span>
-        <a href="https://app.portallacrei.com.br/auth/"> 
-        <strong className="text-rosa-lacrei-400">acessar minha conta</strong> 
-        </a>
       </div>
-    </div>
-    <FooterMobile/>
+      <FooterMobile />
     </>
   );
 }

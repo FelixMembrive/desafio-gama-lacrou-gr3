@@ -40,6 +40,7 @@ export default function WaitingListModal() {
     <Modal
       buttonText="outra localidade"
       buttonStyle="drop-shadow-[0px_1px_6px_rgba(0,0,0,0.4)] border border-0.5 border-verde-lacrei text-verde-lacrei mb-11 font-bold w-[12.68rem] font-nunito "
+      showCancel={true}
     >
       <form className="flex flex-1 flex-col items-center" onSubmit={handleSubmit} id="waitinglist-form">
         <p className="text-center mx-7 mt-4 font-semibold text-sm max-w-md">
@@ -68,7 +69,7 @@ export default function WaitingListModal() {
           inputClassName="min-w-[291px] md:w-[440px] p-4"
           placeholder="Digite seu email"
           required={true}
-          onChange={(e:any)=>setEmail(e.target.value)}
+          onChange={(e: any) => setEmail(e.target.value)}
         />
         <Select
           className="mt-4"
@@ -78,27 +79,27 @@ export default function WaitingListModal() {
           optionValues={["AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SE", "TO"]}
           optionTexts={["AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SE", "TO"]}
           selectClassName="min-w-[291px] md:w-[440px] p-4"
-          onChange={(e:any)=>setRegiao_atuacao(e.target.value)}
+          onChange={(e: any) => setRegiao_atuacao(e.target.value)}
         />
-          <Select
-            className="mt-4"
-            labelClassName="font-bold min-w-[291px] md:w-[440px] p-4"
-            labelText="Profissão *"
-            inputId="select-profession-signup"
-            optionValues={[1,2,3,4,5,6,7]}
-            optionTexts={[
-              "Enfermagem",
-              "Fisioterapia",
-              "Fonoaudiologia",
-              "Medicina",
-              "Nutrição",
-              "Odontologia",
-              "Psicologia",
-            ]}
-            placeholder="Escolha uma profissão"
-            selectClassName="min-w-[291px] mobile-md:min-w-[328px] p-4"
-            onChange={(e:any)=>setProfissao_id(e.target.value)}
-          />
+        <Select
+          className="mt-4"
+          labelClassName="font-bold"
+          labelText="Profissão *"
+          inputId="select-profession-signup"
+          optionValues={[1, 2, 3, 4, 5, 6, 7]}
+          optionTexts={[
+            "Enfermagem",
+            "Fisioterapia",
+            "Fonoaudiologia",
+            "Medicina",
+            "Nutrição",
+            "Odontologia",
+            "Psicologia",
+          ]}
+          placeholder="Escolha uma profissão"
+          selectClassName="min-w-[291px] md:w-[440px] p-4"
+          onChange={(e: any) => setProfissao_id(e.target.value)}
+        />
         <Modal
           type="submit"
           form="waitinglist-form"
@@ -110,11 +111,9 @@ export default function WaitingListModal() {
 
         >
           <p className="text-center self-center mb-6">Acreditamos que em breve poderemos crescer juntos para melhorar a assistência à nossa incrível comunidade LGBTQIAP+!</p>
-
-          <Button to="/login" onPress={document.location.reload} text="Voltar para a Lacrei!" className="bg-verde-lacrei drop-shadow-[0px_1px_6px_rgba(0,0,0,0.4)] w-[223px] text-white font-[18px] self-center mb-8" />
+          <Button to="/login" text="Voltar para a Lacrei!" className="bg-verde-lacrei drop-shadow-[0px_1px_6px_rgba(0,0,0,0.4)] w-[223px] text-white font-[18px] self-center mb-8" />
         </Modal>
       </form>
-      <a href="/login" className="self-center mb-8 text-[#ff1192]">Cancelar</a>
     </Modal>
   );
 }

@@ -65,6 +65,21 @@ module.exports = {
                 "verde-lacrei": "#018762",
                 "verde-lacrei2": "#91D9B7",
             },
+            animation: {
+                wiggle: 'wiggle 1s ease-in-out infinite',
+                "spin-slow1": 'spin 1s linear infinite',
+                "spin-slow2": 'spin 2s linear infinite',
+                "spin-slow3": 'spin 3s linear infinite',
+                "spin-slow4": 'spin 4s linear infinite',
+                "spin-slow5": 'spin 5s linear infinite',
+                "spin-slow6": 'spin 6s linear infinite',
+            },
+            keyframes: {
+                wiggle: {
+                    '0%, 50%': { transform: 'rotate(-50deg)' },
+                    '50%': { transform: 'rotate(50deg)' },
+                }
+            },
         },
         screens: {
             'mobile-md': '360px',
@@ -75,8 +90,8 @@ module.exports = {
             'xl': '1280px',
             '2xl': '1536px',
         },
+        plugins: [
+            require('@tailwindcss/forms')
+        ],
     },
-    plugins: [
-        require('@tailwindcss/forms')
-    ],
 };
